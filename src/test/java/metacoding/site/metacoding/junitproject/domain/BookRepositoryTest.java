@@ -1,5 +1,7 @@
 package metacoding.site.metacoding.junitproject.domain;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringBootConfiguration;
@@ -26,7 +28,16 @@ public class BookRepositoryTest {
      // 책 등록
      @Test
      public void save_test(){
-        System.out.println("save_test 시작");
+      //given
+      String title = "author";
+      String author = "김도현";
+      Book book = Book.builder().title(title).author(author).build();
+      //when
+      Book bookPs = bookRepository.save(book);
+      //then
+      assertEquals(title, bookPs.getTitle());
+      assertEquals(author, bookPs.getAuthor());
+
      }
     
 }

@@ -1,4 +1,4 @@
-package site.metacoding.junitproject;
+package metacoding.site.metacoding.junitproject;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
